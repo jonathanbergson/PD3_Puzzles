@@ -2,8 +2,8 @@
 
 ## Integrantes
 
-695769 - Jonathan Bergson Santos
-000000 - Rafael Madureira ...
+- 695769 - Jonathan Bergson Santos
+- 000000 - Rafael Madureira ???
 
 ## Objetivo
 
