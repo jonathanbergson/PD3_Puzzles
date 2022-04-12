@@ -45,7 +45,7 @@ public class Force : MonoBehaviour
         Vector3 position = transform.position;
         Vector3 forward = transform.forward;
 
-        bool collided = Physics.Raycast(position, forward, out var hit, RaycastDistance);
+        bool collided = Physics.Raycast(position, forward, out var hit, RaycastDistance, Constants.ForceIgnoreLayerMask);
         if (collided && _useForce && _hasBoxGrabbed == false)
         {
             _boxRigidbody = hit.rigidbody;

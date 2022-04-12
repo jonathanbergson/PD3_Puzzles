@@ -1,18 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+public enum CrateColor
+{
+    Red,
+    Blue,
+    Yellow,
+}
 
 public class Target : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public CrateColor color;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag(Constants.CrateTag) && other.GetComponent<Crate>().color == color)
+        {
+            Puzzle.Instance.AddCrate();
+        }
+        else
+        {
+            Debug.Log("Wrong crate");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        if (other.gameObject.CompareTag(Constants.CrateTag) && other.GetComponent<Crate>().color == color)
+        {
+            Puzzle.Instance.RemoveCrate();
+        }
     }
 }
